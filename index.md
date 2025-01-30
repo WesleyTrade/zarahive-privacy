@@ -1,25 +1,22 @@
-# ZaraHive User Data Deletion Policy  
+# ZaraHive User Data Deletion Policy
 
-## 📜 Introduction  
-At **ZaraHive**, we respect your privacy. If you wish to delete your data, follow the steps below.  
+At ZaraHive, we value your privacy and are committed to protecting your personal data. If you wish to delete your data associated with ZaraHive, please follow the steps below.
 
-## 🔹 How to Request Data Deletion?  
+## How to Request Data Deletion
 
-### 1️⃣ Using Facebook & Instagram Settings  
-- Go to **Facebook/Instagram Settings**  
-- Click **Apps & Websites**  
-- Find **ZaraHive** → Click **Remove**  
+If you want to delete your personal data from our systems, please contact us via email. Provide the necessary details, including your registered email and reason for deletion.
 
-### 2️⃣ Request Data Deletion Manually  
-📧 **Email:** support@zarahive.com  
-📌 **Subject:** "Data Deletion Request"  
-📋 **Include:**  
-- Your Name  
-- Email Linked to ZaraHive  
-- Social Media Accounts Connected  
+📧 **Email Support:** support@toptownwear.com  
 
-📆 **Processing Time:** 7 Business Days  
+Once we receive your request, we will process it within 30 days and confirm the deletion.
 
-## 🔹 Contact Information  
-📩 Email: support@zarahive.com  
-🌐 Website: [www.zarahive.com](https://www.zarahive.com)  
+## Important Notes
+- Some data may be retained for legal or security reasons.
+- Data deletion is irreversible and will remove all associated user records.
+- If you have used our services through third-party platforms (e.g., Facebook, Instagram), you may need to delete data through their settings as well.
+
+For further inquiries, feel free to reach out to our support team.
+
+Thank you for choosing ZaraHive!
+
+
