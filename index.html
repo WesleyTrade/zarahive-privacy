@@ -28,7 +28,7 @@
             <p id="policy"></p>
         </section>
         <section id="chatbot">
-            <h2>Chat with our AI</h2>
+            <h2>Chat with Zara</h2>
             <div id="chatbox">
                 <div id="messages"></div>
                 <input type="text" id="userInput" placeholder="Type a message...">
@@ -49,21 +49,28 @@
             .catch(error => console.error('Error fetching API data:', error));
 
         // Chatbot functionality
+        let conversationHistory = [];
+
         async function sendMessage() {
             const userInput = document.getElementById('userInput').value;
             const messagesDiv = document.getElementById('messages');
+            const chatbotName = "Zara";
+
             messagesDiv.innerHTML += `<p>User: ${userInput}</p>`;
             document.getElementById('userInput').value = '';
+
+            conversationHistory.push({ role: 'user', content: userInput });
 
             const response = await fetch('http://localhost:3000/chat', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ message: userInput })
+                body: JSON.stringify({ message: userInput, history: conversationHistory })
             });
             const data = await response.json();
-            messagesDiv.innerHTML += `<p>AI: ${data.response}</p>`;
+            conversationHistory.push({ role: 'assistant', content: data.response });
+
+            messagesDiv.innerHTML += `<p>${chatbotName}: ${data.response}</p>`;
         }
     </script>
 </body>
 </html>
-     
