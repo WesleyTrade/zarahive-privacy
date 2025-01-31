@@ -1,45 +1,86 @@
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Salesforce Sans', Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f4f4f4;
+    background-color: #f4f4f9;
+    color: #222;
 }
 
 header {
-    background: #333;
+    background-color: #00A1E0;
     color: #fff;
-    padding: 1rem 0;
+    padding: 1rem;
     text-align: center;
 }
 
-nav ul {
+header .header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header nav ul {
     list-style: none;
     padding: 0;
+    display: flex;
 }
 
-nav ul li {
-    display: inline;
-    margin: 0 10px;
+header nav ul li {
+    margin-right: 1rem;
 }
 
-nav ul li a {
+header nav ul li a {
     color: #fff;
     text-decoration: none;
 }
 
 main {
-    padding: 20px;
-    background: #fff;
-    margin: 20px;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.content-section .card {
+    background-color: #fff;
+    border: 1px solid #ccc;
     border-radius: 5px;
+    padding: 1rem;
+    margin: 1rem;
+    width: 80%;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 footer {
-    text-align: center;
-    padding: 10px;
-    background: #333;
+    background-color: #333;
     color: #fff;
-    position: fixed;
-    width: 100%;
-    bottom: 0;
+    font-size: 0.8rem;
+    padding: 1rem;
+    text-align: center;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.footer-content a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 0.5rem;
+}
+
+@media (max-width: 600px) {
+    header nav ul {
+        flex-direction: column;
+    }
+
+    header nav ul li {
+        margin: 0.5rem 0;
+    }
+
+    .footer-content {
+        flex-direction: column;
+    }
 }
