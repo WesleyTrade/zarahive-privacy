@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+   <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -34,8 +34,10 @@
                 <h2>Chat with Zara</h2>
                 <div id="chatbox">
                     <div id="messages"></div>
-                    <input type="text" id="userInput" placeholder="Type a message...">
-                    <button onclick="sendMessage()">Send</button>
+                    <div class="input-group">
+                        <input type="text" id="userInput" placeholder="Type a message...">
+                        <button onclick="sendMessage()">Send</button>
+                    </div>
                 </div>
             </div>
         </div>
@@ -63,7 +65,7 @@
             const messagesDiv = document.getElementById('messages');
             const chatbotName = "Zara";
 
-            messagesDiv.innerHTML += `<p>User: ${userInput}</p>`;
+            messagesDiv.innerHTML += `<p class="user-message">User: ${userInput}</p>`;
             document.getElementById('userInput').value = '';
 
             conversationHistory.push({ role: 'user', content: userInput });
@@ -76,8 +78,9 @@
             const data = await response.json();
             conversationHistory.push({ role: 'assistant', content: data.response });
 
-            messagesDiv.innerHTML += `<p>${chatbotName}: ${data.response}</p>`;
+            messagesDiv.innerHTML += `<p class="assistant-message">${chatbotName}: ${data.response}</p>`;
+            messagesDiv.scrollTop = messagesDiv.scrollHeight;
         }
     </script>
 </body>
-</html>
+</html> 
