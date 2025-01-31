@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hire AI Agents - ZaraHive</title>
     <link rel="stylesheet" href="styles.css">
-    <script src="https://cdn.jsdelivr.net/npm/openai-client@latest/dist/OpenAI.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"></script>
 </head>
 <body>
     <header>
@@ -39,7 +39,20 @@
         <p>&copy; 2025 ZaraHive</p>
     </footer>
     <script>
-        const openai = new OpenAI('asst_nm7SzWPO9AXSNd0MbavhWnF4');
+        const apiKey = process.env.OPENAI_API_KEY; // Reference the environment variable
+        const openai = {
+            completions: {
+                create: async function(params) {
+                    const response = await axios.post('https://api.openai.com/v1/engines/davinci-codex/completions', params, {
+                        headers: {
+                            'Authorization': `Bearer ${apiKey}`
+                        }
+                    });
+                    return response.data;
+                }
+            }
+        };
+
         let conversationHistory = [];
 
         async function sendMessage() {
@@ -57,7 +70,7 @@
                 messages: conversationHistory,
             });
 
-            const chatResponse = response.choices[0].message.content;
+            const chatResponse = response.choices[0].text;
             conversationHistory.push({ role: 'assistant', content: chatResponse });
 
             messagesDiv.innerHTML += `<p>${chatbotName}: ${chatResponse}</p>`;
