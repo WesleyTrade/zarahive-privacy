@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hire AI Agents - ZaraHive</title>
     <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.openai.com/api/client.js"></script>
 </head>
 <body>
     <header>
@@ -25,9 +26,42 @@
             <p>Detailed profiles of each AI Agent.</p>
             <p>Contact or booking form for hiring AI Agents.</p>
         </section>
+        <section id="chatbot">
+            <h2>Chat with Zara Luxe</h2>
+            <div id="chatbox">
+                <div id="messages"></div>
+                <input type="text" id="userInput" placeholder="Type a message...">
+                <button onclick="sendMessage()">Send</button>
+            </div>
+        </section>
     </main>
     <footer>
         <p>&copy; 2025 ZaraHive</p>
     </footer>
+    <script>
+        const openai = new OpenAI('asst_nm7SzWPO9AXSNd0MbavhWnF4');
+        let conversationHistory = [];
+
+        async function sendMessage() {
+            const userInput = document.getElementById('userInput').value;
+            const messagesDiv = document.getElementById('messages');
+            const chatbotName = "Zara Luxe";
+
+            messagesDiv.innerHTML += `<p>User: ${userInput}</p>`;
+            document.getElementById('userInput').value = '';
+
+            conversationHistory.push({ role: 'user', content: userInput });
+
+            const response = await openai.completions.create({
+                model: "gpt-3.5-turbo",
+                messages: conversationHistory,
+            });
+
+            const chatResponse = response.choices[0].message.content;
+            conversationHistory.push({ role: 'assistant', content: chatResponse });
+
+            messagesDiv.innerHTML += `<p>${chatbotName}: ${chatResponse}</p>`;
+        }
+    </script>
 </body>
 </html>
