@@ -5,118 +5,46 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ZaraHive Hub</title>
     <link rel="stylesheet" href="styles.css">
-    <style>
-        body {
-            font-family: 'Salesforce Sans', Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f9;
-            color: #222;
-        }
-
-        header {
-            background-color: #00A1E0;
-            color: #fff;
-            padding: 1rem;
-            text-align: center;
-        }
-
-        nav {
-            background-color: #0070D2;
-            color: #fff;
-            padding: 1rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        nav ul {
-            list-style: none;
-            padding: 0;
-            display: flex;
-        }
-
-        nav ul li {
-            margin-right: 1rem;
-        }
-
-        nav ul li a {
-            color: #fff;
-            text-decoration: none;
-        }
-
-        main {
-            padding: 2rem;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-
-        .card {
-            background-color: #fff;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            padding: 1rem;
-            margin: 1rem;
-            width: 80%;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-        }
-
-        footer {
-            background-color: #333;
-            color: #fff;
-            font-size: 0.8rem;
-            padding: 1rem;
-            text-align: center;
-        }
-
-        @media (max-width: 600px) {
-            nav ul {
-                flex-direction: column;
-            }
-
-            nav ul li {
-                margin: 0.5rem 0;
-            }
-        }
-    </style>
 </head>
 <body>
     <header>
-        <h1>ZaraHive Hub</h1>
+        <div class="header-content">
+            <h1>ZaraHive Hub</h1>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="policy.html">User Data Deletion Policy</a></li>
+                    <li><a href="ai-admin.html">AI Agent Administration</a></li>
+                    <li><a href="hire-ai.html">Hire AI Agents</a></li>
+                </ul>
+            </nav>
+        </div>
     </header>
-    <nav>
-        <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="policy.html">User Data Deletion Policy</a></li>
-            <li><a href="ai-admin.html">AI Agent Administration</a></li>
-            <li><a href="hire-ai.html">Hire AI Agents</a></li>
-        </ul>
-        <div class="user-info">
-            <p>Welcome, User</p>
-        </div>
-    </nav>
     <main>
-        <div class="card">
-            <h2>About ZaraHive</h2>
-            <p>Introduction to ZaraHive and overview of services offered.</p>
-        </div>
-        <div class="card" id="api-data">
-            <h2>API Data</h2>
-            <p id="policy"></p>
-        </div>
-        <div class="card" id="chatbot">
-            <h2>Chat with Zara</h2>
-            <div id="chatbox">
-                <div id="messages"></div>
-                <input type="text" id="userInput" placeholder="Type a message...">
-                <button onclick="sendMessage()">Send</button>
+        <div class="content-section">
+            <div class="card">
+                <h2>About ZaraHive</h2>
+                <p>Introduction to ZaraHive and overview of services offered.</p>
+            </div>
+            <div class="card" id="api-data">
+                <h2>API Data</h2>
+                <p id="policy"></p>
+            </div>
+            <div class="card" id="chatbot">
+                <h2>Chat with Zara</h2>
+                <div id="chatbox">
+                    <div id="messages"></div>
+                    <input type="text" id="userInput" placeholder="Type a message...">
+                    <button onclick="sendMessage()">Send</button>
+                </div>
             </div>
         </div>
     </main>
     <footer>
-        <p>&copy; 2025 ZaraHive. All rights reserved.</p>
-        <p>Terms of Service | Privacy Policy | Contact Us</p>
+        <div class="footer-content">
+            <p>&copy; 2025 ZaraHive. All rights reserved.</p>
+            <p><a href="#">Terms of Service</a> | <a href="#">Privacy Policy</a> | <a href="#">Contact Us</a></p>
+        </div>
     </footer>
     <script>
         // Fetch data from the API
