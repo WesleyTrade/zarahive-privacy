@@ -7,7 +7,13 @@ const port = process.env.PORT || 3000;
 require('dotenv').config();
 const OPENAI_API_KEY = process.env.OPENAI_API_KEY;
 
-app.use(cors()); // Enable CORS
+// Enable CORS with specific settings
+app.use(cors({
+    origin: '*', // Allow all origins, adjust as needed
+    methods: 'GET,POST,PUT,DELETE,OPTIONS',
+    allowedHeaders: 'Content-Type,Authorization'
+}));
+
 app.use(bodyParser.json());
 
 let conversationHistory = [];
