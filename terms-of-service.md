@@ -25,4 +25,4 @@ In no event shall ZaraHive, nor any of its officers, directors and employees, sh
 ZaraHive is permitted to revise these terms at any time as it sees fit, and by using this website you are expected to review these terms on a regular basis.
 
 ## Contact Information
-If you have any questions about these Terms, please contact us at support@zarahive.com.
+If you have any questions about these Terms, please contact us at hello@zaraluxe.space.
