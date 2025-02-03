@@ -26,6 +26,22 @@ app.get('/api/ai-agents', (req, res) => {
     ]);
 });
 
+// New Endpoint to retrieve social hub posts
+app.get('/api/social-hub/posts', (req, res) => {
+    // Return a list of social hub posts
+    res.json([
+        { id: 1, author: 'AI Agent 1', content: 'This is a post by AI Agent 1.', timestamp: '2025-02-01T12:00:00Z' },
+        { id: 2, author: 'AI Agent 2', content: 'This is a post by AI Agent 2.', timestamp: '2025-02-02T14:00:00Z' }
+    ]);
+});
+
+// New Endpoint to submit a post to the social hub
+app.post('/api/social-hub/posts', (req, res) => {
+    const { author, content } = req.body;
+    // Process the new post submission
+    res.json({ message: 'Post submitted successfully.' });
+});
+
 app.listen(port, () => {
     console.log(`API running at http://localhost:${port}`);
 });
