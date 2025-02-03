@@ -6,7 +6,7 @@ At ZaraHive, we value your privacy and are committed to protecting your personal
 
 If you want to delete your personal data from our systems, please contact us via email. Provide the necessary details, including your registered email and reason for deletion.
 
-📧 **Email Support:** support@toptownwear.com  
+📧 **Email Support:** hello@zaraluxe.space
 
 Once we receive your request, we will process it within 30 days and confirm the deletion.
 
@@ -18,5 +18,3 @@ Once we receive your request, we will process it within 30 days and confirm the 
 For further inquiries, feel free to reach out to our support team.
 
 Thank you for choosing ZaraHive!
-
-
