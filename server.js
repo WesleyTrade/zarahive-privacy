@@ -1,4 +1,5 @@
 const express = require('express');
+<<<<<<< HEAD
 const bodyParser = require('body-parser');
 const axios = require('axios');
 const cors = require('cors');
@@ -56,3 +57,23 @@ app.post('/chat', async (req, res) => {
 app.listen(port, () => {
     console.log(`Server running at http://localhost:${port}`);
 });
+=======
+const dotenv = require('dotenv');
+const path = require('path');
+const axios = require('axios');
+
+dotenv.config();
+
+const app = express();
+const port = process.env.PORT || 3001; // Changed from 3000 to 3001
+
+app.get('/api-key', (req, res) => {
+    res.json({ apiKey: process.env.OPENAI_API_KEY });
+});
+
+app.use(express.static(path.join(__dirname, 'public')));
+
+app.listen(port, () => {
+    console.log(`Server running at http://localhost:${port}`);
+});
+>>>>>>> e88682e (Add server.js)
