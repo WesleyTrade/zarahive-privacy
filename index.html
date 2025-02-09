@@ -12,171 +12,9 @@
     integrity="sha384-ENjdO4Dr2bkBIFxQpeoLtusKZmZ9ltbxA18XXi7pBGAjFZVx6p8oq6PGN4IY1pih" 
     crossorigin="anonymous"
   >
-
-  <!-- Your custom styles (override Bootstrap defaults or add a dark theme) -->
-  <style>
-    /* Dark Theme Base */
-    body {
-      font-family: Arial, sans-serif;
-      line-height: 1.6;
-      color: #e0e0e0;
-      background-color: #0a0c14; /* Dark background to match the neon/glow feel */
-      margin: 0;
-      padding: 0;
-    }
-    
-    a {
-      text-decoration: none;
-      color: inherit; /* So that your links inherit text color */
-    }
-    a:hover {
-      color: #7a7aff;
-    }
-
-    /* Navbar */
-    .navbar {
-      background-color: #0f0f1f; /* Slightly darker background for the navbar */
-    }
-    /* Override some Bootstrap link colors in navbar */
-    .navbar-brand, .navbar-nav .nav-link {
-      color: #cfcff7 !important; /* Force navbar text color */
-    }
-    .navbar-brand:hover, .navbar-nav .nav-link:hover {
-      color: #7a7aff !important;
-    }
-
-    /* Logo */
-    .header__logo {
-      display: inline-block;
-      max-height: 50px; /* Adjust as needed */
-    }
-
-    /* Hero section */
-    #hero {
-      background: linear-gradient(135deg, #15172b 0%, #0e0f1f 100%);
-      text-align: center;
-      padding: 3rem 1rem;
-    }
-    .hero__headline {
-      font-size: 2rem;
-      margin-bottom: 1rem;
-      color: #e1e1ff;
-    }
-    .hero__subtext {
-      font-size: 1.2rem;
-      margin-bottom: 2rem;
-      color: #bdbdf2;
-    }
-    .hero__cta {
-      background-color: #7a00ff;
-      color: #ffffff;
-      padding: 0.75rem 1.5rem;
-      border-radius: 4px;
-      transition: background-color 0.3s ease;
-      font-weight: bold;
-    }
-    .hero__cta:hover {
-      background-color: #5500b8;
-    }
-
-    /* About/Overview and Feature Cards */
-    .about__title {
-      font-size: 1.5rem;
-      margin-bottom: 1rem;
-      color: #dedeea;
-    }
-    .about__description {
-      margin-bottom: 1rem;
-      color: #bbbbdd;
-    }
-    .about__feature-card {
-      background-color: #1a1a2f;
-      border: 1px solid #2b2b4a;
-      border-radius: 4px;
-      padding: 1rem;
-      height: 100%;
-    }
-    .about__feature-card h3 {
-      color: #d2d2ff;
-    }
-    .about__feature-card p {
-      color: #cacadf;
-    }
-
-    /* API Data section */
-    .api__title {
-      font-size: 1.5rem;
-      margin-bottom: 1rem;
-      color: #dedeea;
-    }
-    .api__endpoints {
-      background-color: #1a1a2f;
-      border: 1px solid #2b2b4a;
-      border-radius: 4px;
-      padding: 1rem;
-      line-height: 1.8;
-    }
-    .api__endpoints strong {
-      color: #9c9ce6;
-    }
-    .api__endpoints p {
-      color: #d0d0f0;
-    }
-
-    /* Social Hub Preview section */
-    .social-hub__title {
-      font-size: 1.5rem;
-      margin-bottom: 1rem;
-      color: #dedeea;
-    }
-    .social-hub__post-card {
-      background-color: #1a1a2f;
-      border: 1px solid #2b2b4a;
-      border-radius: 4px;
-      padding: 1rem;
-      height: 100%;
-    }
-    .social-hub__post-card h4 {
-      color: #d2d2ff;
-      margin-bottom: 0.5rem;
-    }
-    .social-hub__post-card p {
-      color: #cacadf;
-    }
-    .social-hub__view-more,
-    .hero__cta {
-      background-color: #7a00ff;
-      color: #ffffff;
-      padding: 0.5rem 1rem;
-      border-radius: 4px;
-      transition: background-color 0.3s ease;
-      font-weight: bold;
-      display: inline-block;
-      text-align: center;
-    }
-    .social-hub__view-more:hover {
-      background-color: #5500b8;
-    }
-
-    /* Footer */
-    footer {
-      background-color: #0f0f1f;
-      border-top: 1px solid #1f1f3c;
-      padding: 1rem;
-      text-align: center;
-    }
-    .footer__links a {
-      color: #9a9af2;
-      transition: color 0.3s ease;
-      margin: 0 0.5rem;
-    }
-    .footer__links a:hover {
-      color: #e1e1ff;
-    }
-    .footer__links {
-      margin-bottom: 1rem;
-    }
-  </style>
+  
+  <!-- Link to the new style.css file -->
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
@@ -301,25 +139,8 @@
     <div class="container">
       <h2 class="social-hub__title">Recent Social Hub Posts</h2>
       <!-- Bootstrap row for dynamic posts -->
-      <div class="row g-4">
-        <div class="col-md-4">
-          <div class="social-hub__post-card">
-            <h4>Exploring GPT-5 Capabilities</h4>
-            <p>Snippet: "Has anyone tested GPT-5’s performance on specialized tasks yet?"</p>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="social-hub__post-card">
-            <h4>Building AI for Healthcare</h4>
-            <p>Snippet: "I'm working on a diagnostic model. Looking for collaboration..."</p>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="social-hub__post-card">
-            <h4>Insight on Reinforcement Learning</h4>
-            <p>Snippet: "Any recommended resources or tutorials for RL in robotics?"</p>
-          </div>
-        </div>
+      <div class="row g-4" id="social-hub-posts">
+        <!-- Dynamic post cards will be appended here by JavaScript -->
       </div>
       <!-- Button linking to the full Social Hub page -->
       <div class="mt-3">
@@ -353,5 +174,8 @@
     integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+in1GhK3peVQdhr7+8a4x7AoBy/F7" 
     crossorigin="anonymous">
   </script>
+  
+  <!-- Link to the new scripts.js file -->
+  <script src="scripts.js"></script>
 </body>
 </html>
