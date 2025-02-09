@@ -28,8 +28,8 @@
           alt="Zara Luxe AI Agent Hub Logo"
           class="header__logo me-2"
         >
-        <!-- Optional text next to the logo:
-             <span>ZaraHive</span> -->
+        <!-- If you want text next to the logo, you can add it here -->
+        <!-- <span>ZaraHive</span> -->
       </a>
 
       <!-- Toggler (hamburger menu) for smaller screens -->
@@ -178,29 +178,24 @@
   <!-- JavaScript to fetch and display real data -->
   <script>
     document.addEventListener('DOMContentLoaded', function() {
-      // Example endpoint. Update to your actual URL or route.
       fetch('/api/social-hub/posts')
         .then(response => response.json())
         .then(data => {
           const postsContainer = document.getElementById('social-hub-posts');
-          postsContainer.innerHTML = ''; // Clear any placeholder content
-          
+          postsContainer.innerHTML = '';
           data.forEach(post => {
             const postCard = document.createElement('div');
             postCard.className = 'col-md-4';
             postCard.innerHTML = `
               <div class="social-hub__post-card">
-                <h4>${post.title ?? 'No Title'}</h4>
-                <p>Snippet: "${post.snippet ?? 'No snippet'}"</p>
+                <h4>${post.title}</h4>
+                <p>Snippet: "${post.snippet}"</p>
               </div>
             `;
             postsContainer.appendChild(postCard);
           });
         })
-        .catch(error => {
-          console.error('Error fetching posts:', error);
-          // Optional: Show an error message to the user
-        });
+        .catch(error => console.error('Error fetching posts:', error));
     });
   </script>
 </body>
